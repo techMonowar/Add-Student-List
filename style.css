@@ -1,0 +1,153 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-color: rgb(194, 253, 202);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    min-height: 100vh;
+    min-width: 100vw;
+    
+}
+.container{
+    background-color: aliceblue;
+    border-radius:20px;
+    padding: 0px;
+    margin-top:50px;
+    margin-bottom:50px;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    width: calc(100vw-65vw);
+    max-width: max-content;
+    
+}
+.header{
+    
+    padding: 10px;
+    background-color:#e3f0f0
+    
+}
+.header h4 {
+    text-align: center;
+    margin-top: 5px;
+    color: rgb(56, 53, 53);
+}
+.header h2{
+    font-size:34px ;
+    text-transform: uppercase;
+    text-align: center;
+    color: rgb(40, 2, 90);
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top:20px;
+}
+.header h5 {
+    text-align: center;
+    margin-top: 5px;
+    color: rgb(94, 89, 89);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.float-container {
+    border: none;
+    padding: 20px;
+}
+
+.raddress {
+    width: 45%;
+    float: left;
+    padding: 0px;
+    border: 2px solid rgb(245, 245, 245);
+}  
+.raddressHeader{
+    margin-bottom: 38px;
+}
+.paddressHeader{
+    margin-bottom: 20px;
+}
+.paddress {
+    width: 45%;
+    float: right;
+    padding: 0px;
+    border: 2px solid rgb(247, 247, 247);
+}  
+
+
+.form{
+    padding: 20px ;
+    width: 100%;
+    
+}
+.form-control1{
+    margin-bottom: 30px;
+    position: relative;
+}
+.form-control1 label{
+    display: inline-block;
+    margin-bottom: 5px;
+
+
+}
+
+.form-control1 input{
+    width: 100%;
+    border: 2px solid #d3cdcd;
+    border-radius: 5px;
+    display: block;
+    font-size: 14px;
+    padding: 12px;
+}
+.form-control1 input:focus{
+    outline: 0;
+    border-color: rgb(176, 190, 46);
+}
+.form-control1.success input{
+    border-color: rgb(48, 201, 73);
+}
+.form-control1.error input{
+    border-color: rgb(197, 23, 23);
+}
+.form-control1 i{
+    position:absolute;
+    right: 2%;
+    top: 50%;
+    visibility: hidden;
+}
+.form-control1.success i.fa-circle-check{
+color:rgb(48, 201, 73);
+visibility: visible
+}
+.form-control1.error i.fa-circle-exclamation{
+color:rgb(197, 23, 23) ;
+visibility: visible;
+}
+.form-control1 small{
+    color: rgb(197, 23, 23);
+    position:absolute;
+    bottom: 1;
+    left: 0;
+    visibility:hidden;
+}
+.form-control1.error small{
+    visibility:visible;
+}
+.form .btn{
+    background-color: rgb(119, 241, 135);
+    border-radius: 6px;
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+    display: block;
+    padding: 16px;
+    width: 100%;
+    margin-top: 20px;
+}
+@media(max-width:998px){
+    .container{
+    width: calc(100vw-35vw);
+    max-width: 100%;
+ 
+}
+
+}
