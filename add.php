@@ -19,25 +19,40 @@ if (isset($_POST['submit'])){
   $rdistrict =$_POST['rdistrict'];
   $rstate =$_POST['rstate'];
   $rpin =$_POST['rpin'];
-  if ($firstname!="" && $lastname!="" && $mobile!="" ){
- $sql = "INSERT INTO studentlist (firstname, lastname, mobile, email, fathername, gender, collegename, paddress, ppostoffice, pdistrict, pstate, ppin, raddress, rpostoffice, rdistrict, rstate, rpin)
- VALUES ('$firstname','$lastname','$mobile','$email','$fathername','$gender', '$collegename','$paddress','$ppostoffice','$pdistrict','$pstate','$ppin','$raddress','$rpostoffice','$rdistrict','$rstate','$rpin')";
 
- $result=mysqli_query($conn,$sql);
- if ($result) {
-  echo "<script>alert('Wow! User Registration Completed.')</script>";
+
+  if ($firstname!="" && $lastname!="" && $mobile!="" ){
+    $sql = "SELECT * FROM studentlist WHERE email='$email'";
+		$result = mysqli_query($conn, $sql);
+		if($result){
+			$q = "SELECT * FROM studentlist WHERE mobile='$mobile'";
+			$result = mysqli_query($conn,$q);
+		if (!$result->num_rows > 0) {
+      $sql = "INSERT INTO studentlist (firstname, lastname, mobile, email, fathername, gender, collegename, paddress, ppostoffice, pdistrict, pstate, ppin, raddress, rpostoffice, rdistrict, rstate, rpin)
+      VALUES ('$firstname','$lastname','$mobile','$email','$fathername','$gender', '$collegename','$paddress','$ppostoffice','$pdistrict','$pstate','$ppin','$raddress','$rpostoffice','$rdistrict','$rstate','$rpin')";
+
+      $result=mysqli_query($conn,$sql);
+      if ($result) {
+      echo "<script>alert('Wow! User Registration Completed.')</script>";
   
   
-} else {
-  echo "<script>alert('Woops! Database Errort.')</script>";
+      } else {
+       echo "<script>alert('Woops! Database Errort.')</script>";
+       }
+}else{
+  echo "<script>alert('Email or Mobile No. Already Exists.')</script>";
 }
-}
-else{
+       
+  }
+}else{
   echo "<script>alert('Empty! Please Fill All The Required Filled.')</script>";
 }
 }
 
 ?>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
